@@ -41,7 +41,7 @@ app.post('/submitQuote',(req,res) =>{
 })
 
 
-app.listen(3000,()=>{
-	console.log('Running on Port 3000');
+app.listen(process.env.Port || 3000,()=>{
+	console.log(`Running on Port ${process.env.port}`);
 })
 
