@@ -15,11 +15,16 @@ const db = knex({
 		database:'db'
 	}
 })
-db.select('*').from('quote').then(data => {
-	console.log(data);
-})
+
 app.get('/',(req,res)=>{
 	res.send('It worked');
+})
+
+app.get('/getQuote',(req,res)=>{
+	db.select('*').from('quote')
+	.then(data => {
+	res.send(data);
+	})
 })
 
 app.post('/submitQuote',(req,res) =>{
