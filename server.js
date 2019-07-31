@@ -6,23 +6,23 @@ const cors = require('cors');
 const app = express();
 app.use(cors());
 app.use(bodyParser.json())
-// const db = knex({
-// 	client:'pg',
-// 	connection:{
-// 		connectionString:process.env.DATABASE_URL,
-// 		ssl:true,
-// 	}
-// })
+const db = knex({
+	client:'pg',
+	connection:{
+		connectionString:process.env.DATABASE_URL,
+		ssl:true,
+	}
+})
 
-const db=knex({
-  client: 'pg',
-  connection: {
-    host : '127.0.0.1',
-    user : '',
-    password : '',
-    database : 'db'
-  }
-});
+// const db=knex({
+//   client: 'pg',
+//   connection: {
+//     host : '127.0.0.1',
+//     user : '',
+//     password : '',
+//     database : 'db'
+//   }
+// });
 
 console.log("yeah");
 app.get('/',(req,res)=>{
