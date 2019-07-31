@@ -24,7 +24,6 @@ const db = knex({
 //   }
 // });
 
-console.log("yeah");
 app.get('/',(req,res)=>{
 	res.send("Server is running");
 })
